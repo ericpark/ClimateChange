@@ -30,6 +30,7 @@ class HomePageViewController: MenuItemContentViewController {
         showMenu()
     }
 
+    //TODO: This should all be done in prepare. 
     @IBAction func healthMenu(_ sender: UIButton) {
         let vc = CategoryPageViewController(
             nibName: "CategoryPageViewController",
@@ -119,43 +120,16 @@ extension UIViewController{
         
         for name in names{
              do {
+                //fetch names
                 fetchRequest.predicate = NSPredicate(format: "name == %@", name)
                 let results = try managedContext.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [DetailImages]
                 if results.count != 0{
                     let darkenedImage = UIImage(data: results[0].image! as Data)?.image(alpha: 0.7)
-                    //let darkenedImage = UIImage(data: results[0].image! as Data)
                     images[results[0].name! as String] = darkenedImage
-                    ////print("adding " + results[0].name! as String)
 
                 }
                 
-            //let fetchedImages = try managedContext.fetch(fetchRequest) as! [DetailImages]
-            //let array = fetchedImages
-            
-            
-           // for image in array{
-             //
-               // let darkenedImage = UIImage(data: image.image! as Data)?.image(alpha: 0.7)
-                //images[image.name! as String] = darkenedImage
-                ////print("adding " + image.name! as String)
-                //let storageRef = FIRStorage.storage().reference()
-                //let imageRef = storageRef.child(image.name! + "." + image.filetype!)
-                
-                // Get metadata properties
-                /*
-                 imageRef.metadata { metadata, error in
-                 if let error = error {
-                 // Uh-oh, an error occurred!
-                 // //print(error)
-                 } else {
-                 // Metadata now contains the metadata for 'images/forest.jpg'
-                 if (metadata?.updated)?.compare(image.dateModified as! Date) == ComparisonResult.orderedDescending {
-                 managedContext.delete(image)
-                 }
-                 }
-                 }*/
-           // }
-            managedContext.reset()
+                managedContext.reset()
             
             
             } catch _ as NSError {
@@ -167,6 +141,7 @@ extension UIViewController{
 }
 
 extension UIImage {
+    //Increase Alpha to make it transparent. This will be used to darken image over black bg
     func image(alpha: CGFloat) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         draw(at: CGPoint.zero, blendMode: .normal, alpha: alpha)
