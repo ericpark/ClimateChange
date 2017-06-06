@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CategoryPageTableViewCell" rowHeight="99" id="KGk-i7-Jjw" customClass="CategoryPageTableViewCell" customModule="Consequences_of_Climate_Change" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="zfa-QD-RX5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jH-CH-pVD">
+                        <rect key="frame" x="6" y="8.5" width="308" height="58"/>
+                        <attributedString key="attributedText">
+                            <fragment>
+                                <string key="content">Increase in Incidence of Malaria in Humans Increase in Incidence of Malaria in Humans Increase in Incidence of Malaria in Humans</string>
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="23" name="LaoSangamMN"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                <constraints>
+                    <constraint firstItem="zfa-QD-RX5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KBZ-8z-LkY"/>
+                    <constraint firstItem="zfa-QD-RX5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="hsY-V6-xSb"/>
+                    <constraint firstItem="zfa-QD-RX5" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="tdO-Fk-fjE"/>
+                    <constraint firstItem="zfa-QD-RX5" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="xs3-1z-djw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3jH-CH-pVD" firstAttribute="centerX" secondItem="KGk-i7-Jjw" secondAttribute="centerX" id="0BS-k3-ccp"/>
+                <constraint firstItem="3jH-CH-pVD" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="308/320" id="0OG-uy-PMV"/>
+                <constraint firstItem="3jH-CH-pVD" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="96A-xq-9Tz"/>
+                <constraint firstItem="3jH-CH-pVD" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="34/44" id="oqH-Wx-cby"/>
+            </constraints>
+            <connections>
+                <outlet property="cellImageView" destination="zfa-QD-RX5" id="GoF-HW-VbA"/>
+                <outlet property="titleLabel" destination="3jH-CH-pVD" id="cl5-WY-WHh"/>
+            </connections>
+            <point key="canvasLocation" x="59" y="81.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Launch" width="1920" height="1079"/>
+    </resources>
+</document>

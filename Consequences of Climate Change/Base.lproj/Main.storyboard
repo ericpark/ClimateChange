@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xvk-hX-DQH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Consequences_of_Climate_Change" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xOb-4y-NgW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5999999999999" y="113.79310344827587"/>
+        </scene>
+        <!--Navigation Menu View Controller-->
+        <scene sceneID="4gS-Kd-CTw">
+            <objects>
+                <viewController storyboardIdentifier="NavigationMenu" id="fnR-RL-bcn" customClass="NavigationMenuViewController" customModule="Consequences_of_Climate_Change" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wCY-Un-CTt"/>
+                        <viewControllerLayoutGuide type="bottom" id="QlX-Uv-f76"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3tP-rt-9kZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iD8-AA-WcB">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" id="q8u-7S-zni">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q8u-7S-zni" id="IHk-lD-KMa">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="Ymb-f6-mMd">
+                                <rect key="frame" x="0.0" y="221" width="375" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ymb-f6-mMd" secondAttribute="height" multiplier="5:3" id="nZB-bs-oh2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iD8-AA-WcB" firstAttribute="top" secondItem="wCY-Un-CTt" secondAttribute="bottom" id="3zJ-8M-Udh"/>
+                            <constraint firstItem="iD8-AA-WcB" firstAttribute="leading" secondItem="3tP-rt-9kZ" secondAttribute="leadingMargin" id="Loy-Rf-kEK"/>
+                            <constraint firstItem="Ymb-f6-mMd" firstAttribute="centerY" secondItem="3tP-rt-9kZ" secondAttribute="centerY" id="NSo-50-x2r"/>
+                            <constraint firstItem="Ymb-f6-mMd" firstAttribute="width" secondItem="3tP-rt-9kZ" secondAttribute="width" id="Uci-QS-4xX"/>
+                            <constraint firstItem="Ymb-f6-mMd" firstAttribute="centerX" secondItem="3tP-rt-9kZ" secondAttribute="centerX" id="Yq3-oo-uav"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iD8-AA-WcB" secondAttribute="trailing" id="bbQ-Ii-OJU"/>
+                            <constraint firstItem="QlX-Uv-f76" firstAttribute="top" secondItem="iD8-AA-WcB" secondAttribute="bottom" id="h1O-Od-sGM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="iD8-AA-WcB" id="HYV-1w-HNF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pcp-Fb-FKK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="113.79310344827587"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SbK-Bv-rHI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xvk-hX-DQH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MOG-gf-gL3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="o5h-PQ-ahm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wC5-FJ-oBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.8" y="113.79310344827587"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Launch" width="1920" height="1079"/>
+    </resources>
+</document>

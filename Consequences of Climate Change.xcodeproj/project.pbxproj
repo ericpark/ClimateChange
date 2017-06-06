@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE4B7DC9574AC7BB9B1A71AB /* Pods_Consequences_of_Climate_Change.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704480DB3302A353C635F7A1 /* Pods_Consequences_of_Climate_Change.framework */; };
+		E30B62DE1EB9529C00D6076A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30B62DD1EB9529C00D6076A /* AdSupport.framework */; };
+		E32F387C1EB0548800C37B3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F387B1EB0548800C37B3C /* HomeViewController.swift */; };
+		E349C0DB1EB3D9D2006B6DC4 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C0D91EB3D9D2006B6DC4 /* AboutPageViewController.swift */; };
+		E349C0DC1EB3D9D2006B6DC4 /* AboutPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E349C0DA1EB3D9D2006B6DC4 /* AboutPageViewController.xib */; };
+		E3778BF51EB3E74600C3E5E3 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3778BF31EB3E74600C3E5E3 /* HomePageViewController.swift */; };
+		E3778BF61EB3E74600C3E5E3 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3778BF41EB3E74600C3E5E3 /* HomePageViewController.xib */; };
+		E3778BFA1EB3F94000C3E5E3 /* CategoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3778BF81EB3F94000C3E5E3 /* CategoryPageViewController.swift */; };
+		E3778BFB1EB3F94000C3E5E3 /* CategoryPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3778BF91EB3F94000C3E5E3 /* CategoryPageViewController.xib */; };
+		E3778BFE1EB4091500C3E5E3 /* CategoryPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3778BFC1EB4091500C3E5E3 /* CategoryPageTableViewCell.swift */; };
+		E3778BFF1EB4091500C3E5E3 /* CategoryPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3778BFD1EB4091500C3E5E3 /* CategoryPageTableViewCell.xib */; };
+		E3778C031EB4418500C3E5E3 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3778C011EB4418500C3E5E3 /* DetailPageViewController.swift */; };
+		E3778C041EB4418500C3E5E3 /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3778C021EB4418500C3E5E3 /* DetailPageViewController.xib */; };
+		E3778C061EB460F500C3E5E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3778C051EB460F500C3E5E3 /* GoogleService-Info.plist */; };
+		E38B84811EB0404900F6FC76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38B84801EB0404900F6FC76 /* AppDelegate.swift */; };
+		E38B84861EB0404900F6FC76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38B84841EB0404900F6FC76 /* Main.storyboard */; };
+		E38B84891EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E38B84871EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodeld */; };
+		E38B848B1EB0404900F6FC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E38B848A1EB0404900F6FC76 /* Assets.xcassets */; };
+		E38B848E1EB0404900F6FC76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38B848C1EB0404900F6FC76 /* LaunchScreen.storyboard */; };
+		E3BC825D1EB1AC7000CAFDBE /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC825C1EB1AC7000CAFDBE /* NavigationMenuViewController.swift */; };
+		E3F5A4C91EC2E7B00042B183 /* DetailImages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5A4C71EC2E7B00042B183 /* DetailImages+CoreDataClass.swift */; };
+		E3F5A4CA1EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5A4C81EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B762DFA3ED9EDCD5EE1E531 /* Pods-Consequences of Climate Change.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Consequences of Climate Change.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Consequences of Climate Change/Pods-Consequences of Climate Change.debug.xcconfig"; sourceTree = "<group>"; };
+		50C90A337A3553B61D200E5B /* Pods-Consequences of Climate Change.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Consequences of Climate Change.release.xcconfig"; path = "Pods/Target Support Files/Pods-Consequences of Climate Change/Pods-Consequences of Climate Change.release.xcconfig"; sourceTree = "<group>"; };
+		704480DB3302A353C635F7A1 /* Pods_Consequences_of_Climate_Change.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Consequences_of_Climate_Change.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E30B62DD1EB9529C00D6076A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E32F387B1EB0548800C37B3C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E349C0D91EB3D9D2006B6DC4 /* AboutPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutPageViewController.swift; path = About/AboutPageViewController.swift; sourceTree = "<group>"; };
+		E349C0DA1EB3D9D2006B6DC4 /* AboutPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutPageViewController.xib; path = About/AboutPageViewController.xib; sourceTree = "<group>"; };
+		E3778BF31EB3E74600C3E5E3 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageViewController.swift; path = HomePage/HomePageViewController.swift; sourceTree = "<group>"; };
+		E3778BF41EB3E74600C3E5E3 /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageViewController.xib; path = HomePage/HomePageViewController.xib; sourceTree = "<group>"; };
+		E3778BF81EB3F94000C3E5E3 /* CategoryPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryPageViewController.swift; path = CategoryPage/CategoryPageViewController.swift; sourceTree = "<group>"; };
+		E3778BF91EB3F94000C3E5E3 /* CategoryPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryPageViewController.xib; path = CategoryPage/CategoryPageViewController.xib; sourceTree = "<group>"; };
+		E3778BFC1EB4091500C3E5E3 /* CategoryPageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryPageTableViewCell.swift; path = CategoryPage/CategoryPageTableViewCell.swift; sourceTree = "<group>"; };
+		E3778BFD1EB4091500C3E5E3 /* CategoryPageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryPageTableViewCell.xib; path = CategoryPage/CategoryPageTableViewCell.xib; sourceTree = "<group>"; };
+		E3778C011EB4418500C3E5E3 /* DetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailPageViewController.swift; path = DetailPage/DetailPageViewController.swift; sourceTree = "<group>"; };
+		E3778C021EB4418500C3E5E3 /* DetailPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailPageViewController.xib; path = DetailPage/DetailPageViewController.xib; sourceTree = "<group>"; };
+		E3778C051EB460F500C3E5E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E38B847D1EB0404900F6FC76 /* Consequences of Climate Change.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Consequences of Climate Change.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E38B84801EB0404900F6FC76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E38B84851EB0404900F6FC76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E38B84881EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Consequences_of_Climate_Change.xcdatamodel; sourceTree = "<group>"; };
+		E38B848A1EB0404900F6FC76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E38B848D1EB0404900F6FC76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E38B848F1EB0404900F6FC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3BC825C1EB1AC7000CAFDBE /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
+		E3F5A4C71EC2E7B00042B183 /* DetailImages+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DetailImages+CoreDataClass.swift"; path = "imageData/DetailImages+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E3F5A4C81EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DetailImages+CoreDataProperties.swift"; path = "imageData/DetailImages+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E38B847A1EB0404900F6FC76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E30B62DE1EB9529C00D6076A /* AdSupport.framework in Frameworks */,
+				AE4B7DC9574AC7BB9B1A71AB /* Pods_Consequences_of_Climate_Change.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34F241289C1D5FF39EDC5A39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B762DFA3ED9EDCD5EE1E531 /* Pods-Consequences of Climate Change.debug.xcconfig */,
+				50C90A337A3553B61D200E5B /* Pods-Consequences of Climate Change.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3B791DB928460E4321787633 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E30B62DD1EB9529C00D6076A /* AdSupport.framework */,
+				704480DB3302A353C635F7A1 /* Pods_Consequences_of_Climate_Change.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E349C0DD1EB3D9DB006B6DC4 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E349C0D91EB3D9D2006B6DC4 /* AboutPageViewController.swift */,
+				E349C0DA1EB3D9D2006B6DC4 /* AboutPageViewController.xib */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		E3778BF21EB3E72900C3E5E3 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				E3778BF31EB3E74600C3E5E3 /* HomePageViewController.swift */,
+				E3778BF41EB3E74600C3E5E3 /* HomePageViewController.xib */,
+			);
+			name = HomePage;
+			sourceTree = "<group>";
+		};
+		E3778BF71EB3F84800C3E5E3 /* Category Page */ = {
+			isa = PBXGroup;
+			children = (
+				E3778BF81EB3F94000C3E5E3 /* CategoryPageViewController.swift */,
+				E3778BF91EB3F94000C3E5E3 /* CategoryPageViewController.xib */,
+				E3778BFC1EB4091500C3E5E3 /* CategoryPageTableViewCell.swift */,
+				E3778BFD1EB4091500C3E5E3 /* CategoryPageTableViewCell.xib */,
+			);
+			name = "Category Page";
+			sourceTree = "<group>";
+		};
+		E3778C001EB43C8A00C3E5E3 /* Detail Page */ = {
+			isa = PBXGroup;
+			children = (
+				E3778C011EB4418500C3E5E3 /* DetailPageViewController.swift */,
+				E3778C021EB4418500C3E5E3 /* DetailPageViewController.xib */,
+			);
+			name = "Detail Page";
+			sourceTree = "<group>";
+		};
+		E38B84741EB0404900F6FC76 = {
+			isa = PBXGroup;
+			children = (
+				E38B847F1EB0404900F6FC76 /* Consequences of Climate Change */,
+				E38B847E1EB0404900F6FC76 /* Products */,
+				34F241289C1D5FF39EDC5A39 /* Pods */,
+				3B791DB928460E4321787633 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E38B847E1EB0404900F6FC76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E38B847D1EB0404900F6FC76 /* Consequences of Climate Change.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E38B847F1EB0404900F6FC76 /* Consequences of Climate Change */ = {
+			isa = PBXGroup;
+			children = (
+				E38B84801EB0404900F6FC76 /* AppDelegate.swift */,
+				E38B84841EB0404900F6FC76 /* Main.storyboard */,
+				E32F387B1EB0548800C37B3C /* HomeViewController.swift */,
+				E3BC825C1EB1AC7000CAFDBE /* NavigationMenuViewController.swift */,
+				E3778BF21EB3E72900C3E5E3 /* HomePage */,
+				E3778BF71EB3F84800C3E5E3 /* Category Page */,
+				E3778C001EB43C8A00C3E5E3 /* Detail Page */,
+				E349C0DD1EB3D9DB006B6DC4 /* About */,
+				E38B848A1EB0404900F6FC76 /* Assets.xcassets */,
+				E38B848C1EB0404900F6FC76 /* LaunchScreen.storyboard */,
+				E38B848F1EB0404900F6FC76 /* Info.plist */,
+				E3778C051EB460F500C3E5E3 /* GoogleService-Info.plist */,
+				E38B84871EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodeld */,
+				E3F5A4C71EC2E7B00042B183 /* DetailImages+CoreDataClass.swift */,
+				E3F5A4C81EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift */,
+			);
+			path = "Consequences of Climate Change";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E38B847C1EB0404900F6FC76 /* Consequences of Climate Change */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E38B84921EB0404900F6FC76 /* Build configuration list for PBXNativeTarget "Consequences of Climate Change" */;
+			buildPhases = (
+				37DCA94D7D26A9AA9A95A25F /* [CP] Check Pods Manifest.lock */,
+				E38B84791EB0404900F6FC76 /* Sources */,
+				E38B847A1EB0404900F6FC76 /* Frameworks */,
+				E38B847B1EB0404900F6FC76 /* Resources */,
+				32896E71E973D6370616CC80 /* [CP] Embed Pods Frameworks */,
+				904A2E45E2606EEE5495DD78 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Consequences of Climate Change";
+			productName = "Consequences of Climate Change";
+			productReference = E38B847D1EB0404900F6FC76 /* Consequences of Climate Change.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E38B84751EB0404900F6FC76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Eric Park";
+				TargetAttributes = {
+					E38B847C1EB0404900F6FC76 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 94CZVWLG85;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E38B84781EB0404900F6FC76 /* Build configuration list for PBXProject "Consequences of Climate Change" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E38B84741EB0404900F6FC76;
+			productRefGroup = E38B847E1EB0404900F6FC76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E38B847C1EB0404900F6FC76 /* Consequences of Climate Change */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E38B847B1EB0404900F6FC76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E38B848E1EB0404900F6FC76 /* LaunchScreen.storyboard in Resources */,
+				E3778BFB1EB3F94000C3E5E3 /* CategoryPageViewController.xib in Resources */,
+				E3778C061EB460F500C3E5E3 /* GoogleService-Info.plist in Resources */,
+				E3778BF61EB3E74600C3E5E3 /* HomePageViewController.xib in Resources */,
+				E38B848B1EB0404900F6FC76 /* Assets.xcassets in Resources */,
+				E3778C041EB4418500C3E5E3 /* DetailPageViewController.xib in Resources */,
+				E38B84861EB0404900F6FC76 /* Main.storyboard in Resources */,
+				E349C0DC1EB3D9D2006B6DC4 /* AboutPageViewController.xib in Resources */,
+				E3778BFF1EB4091500C3E5E3 /* CategoryPageTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32896E71E973D6370616CC80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Consequences of Climate Change/Pods-Consequences of Climate Change-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37DCA94D7D26A9AA9A95A25F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		904A2E45E2606EEE5495DD78 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Consequences of Climate Change/Pods-Consequences of Climate Change-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E38B84791EB0404900F6FC76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3F5A4C91EC2E7B00042B183 /* DetailImages+CoreDataClass.swift in Sources */,
+				E3778BFE1EB4091500C3E5E3 /* CategoryPageTableViewCell.swift in Sources */,
+				E3F5A4CA1EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift in Sources */,
+				E349C0DB1EB3D9D2006B6DC4 /* AboutPageViewController.swift in Sources */,
+				E3778BFA1EB3F94000C3E5E3 /* CategoryPageViewController.swift in Sources */,
+				E38B84811EB0404900F6FC76 /* AppDelegate.swift in Sources */,
+				E3778BF51EB3E74600C3E5E3 /* HomePageViewController.swift in Sources */,
+				E3BC825D1EB1AC7000CAFDBE /* NavigationMenuViewController.swift in Sources */,
+				E3778C031EB4418500C3E5E3 /* DetailPageViewController.swift in Sources */,
+				E38B84891EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodeld in Sources */,
+				E32F387C1EB0548800C37B3C /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E38B84841EB0404900F6FC76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E38B84851EB0404900F6FC76 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E38B848C1EB0404900F6FC76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E38B848D1EB0404900F6FC76 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E38B84901EB0404900F6FC76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E38B84911EB0404900F6FC76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E38B84931EB0404900F6FC76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B762DFA3ED9EDCD5EE1E531 /* Pods-Consequences of Climate Change.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94CZVWLG85;
+				INFOPLIST_FILE = "Consequences of Climate Change/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ericspark.Consequences-of-Climate-Change";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E38B84941EB0404900F6FC76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C90A337A3553B61D200E5B /* Pods-Consequences of Climate Change.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94CZVWLG85;
+				INFOPLIST_FILE = "Consequences of Climate Change/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ericspark.Consequences-of-Climate-Change";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E38B84781EB0404900F6FC76 /* Build configuration list for PBXProject "Consequences of Climate Change" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E38B84901EB0404900F6FC76 /* Debug */,
+				E38B84911EB0404900F6FC76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E38B84921EB0404900F6FC76 /* Build configuration list for PBXNativeTarget "Consequences of Climate Change" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E38B84931EB0404900F6FC76 /* Debug */,
+				E38B84941EB0404900F6FC76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E38B84871EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E38B84881EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodel */,
+			);
+			currentVersion = E38B84881EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodel */;
+			path = Consequences_of_Climate_Change.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E38B84751EB0404900F6FC76 /* Project object */;
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailPageViewController" customModule="Consequences_of_Climate_Change" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="bkm-fy-Slw" id="gtt-g7-i12"/>
+                <outlet property="textView" destination="wzj-Hf-Z0i" id="gQg-Sq-tqD"/>
+                <outlet property="titleLabel" destination="hpH-OC-8zS" id="Y6I-Bz-zil"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="bkm-fy-Slw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bkm-fy-Slw" secondAttribute="height" multiplier="125:71" id="2Er-hu-2ht"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24c-wE-QeS">
+                    <rect key="frame" x="5" y="5" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Oqu-hd-FB8"/>
+                        <constraint firstAttribute="width" constant="44" id="dWq-9k-LHs"/>
+                        <constraint firstAttribute="width" secondItem="24c-wE-QeS" secondAttribute="height" multiplier="1:1" id="g1x-4z-Z5X"/>
+                    </constraints>
+                    <state key="normal" title="&lt;">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="SuJ-aT-Jah"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wzj-Hf-Z0i">
+                    <rect key="frame" x="0.0" y="214" width="375" height="453"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="wzj-Hf-Z0i" secondAttribute="height" multiplier="125:151" id="mdp-gq-f4u"/>
+                    </constraints>
+                    <string key="text">        	Description: Malaria, caused by the parasitic protozoan Plasmodium falciparum in humans, is a vector-borne disease that can have varying levels of severity from minor infections to fatal (Trager &amp; Jensen 1976). Currently, malaria kills more than half a million people per year (WHO Facts on Malaria 2017). It is carried by a number of species of mosquito belonging to the genus Anopheles. Despite the availability of anti-malarial medications in the developed world, many developings still struggle with malaria, which has reached near-epidemic status in some tropical nations (WHO Facts on Malaria 2017). As the climate warms, vector species like Anopheles will be able to move polewards, away from their tropical origins. This will engender the spread of malaria-carrying mosquitoes to areas where malaria is not normally endemic. This will cause humans with no historical immunity to be exposed to a potentially deadly disease. Interestingly, the alteration of precipitation patterns will cause vector populations to spike in some areas that become more humid and decline in others that become more arid\. \n 
+ 
+        	Steps We Can Take: In addition to mitigating our greenhouse gas emissions, we can take steps to directly combat the increasing spread of malaria. Raising public awareness about the dangers of leaving standing water in urban areas will reduce the risk of malaria spread by eliminating potential Anopheles breeding grounds. Furthermore, investment in conservation of mosquito predators such as microbats will help to control the populations. Finally, an increase in anti-malarial medication production and distribution to nations at risk, which will help to combat the spread in those areas and reduce the effects of the emissions of developed nations on those countries who are less to blame.
+ 
+        	Links to Other Climate Change Effects: Arthropod Range Shifts, Increase in Avian Malaria, Increased Spread of Dengue Fever, Increase in Medical Spending 
+</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hpH-OC-8zS">
+                    <rect key="frame" x="0.0" y="141" width="375" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hpH-OC-8zS" secondAttribute="height" multiplier="125:24" id="3nD-Bc-gWL"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Consequences of Climate Change">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="28" name="LaoSangamMN"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="24c-wE-QeS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="13D-2t-75y"/>
+                <constraint firstItem="bkm-fy-Slw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="73z-i8-Vqc"/>
+                <constraint firstItem="bkm-fy-Slw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Bsp-Ti-9Vx"/>
+                <constraint firstItem="24c-wE-QeS" firstAttribute="width" secondItem="24c-wE-QeS" secondAttribute="height" multiplier="1:1" id="DKQ-KM-jXu"/>
+                <constraint firstItem="hpH-OC-8zS" firstAttribute="bottom" secondItem="bkm-fy-Slw" secondAttribute="bottom" id="L3l-Cd-DmL"/>
+                <constraint firstItem="bkm-fy-Slw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Nce-AJ-NmX"/>
+                <constraint firstItem="wzj-Hf-Z0i" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="QBh-Mk-Wac"/>
+                <constraint firstItem="bkm-fy-Slw" firstAttribute="width" secondItem="bkm-fy-Slw" secondAttribute="height" multiplier="125:71" id="UsB-NN-9I6"/>
+                <constraint firstItem="wzj-Hf-Z0i" firstAttribute="top" secondItem="bkm-fy-Slw" secondAttribute="bottom" constant="1" id="Y7x-Ac-JHK"/>
+                <constraint firstItem="hpH-OC-8zS" firstAttribute="centerX" secondItem="bkm-fy-Slw" secondAttribute="centerX" id="cdy-iY-3jZ"/>
+                <constraint firstItem="wzj-Hf-Z0i" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dTh-8R-0oh"/>
+                <constraint firstItem="24c-wE-QeS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="muo-Jj-KWZ"/>
+                <constraint firstItem="hpH-OC-8zS" firstAttribute="width" secondItem="bkm-fy-Slw" secondAttribute="width" id="r9o-n4-Rfc"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Launch" width="1920" height="1079"/>
+    </resources>
+</document>
