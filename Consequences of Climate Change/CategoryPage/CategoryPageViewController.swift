@@ -219,9 +219,10 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         vc.detailName = topics[indexPath.row]
 
         var description = desc.replacingOccurrences(of:"_period", with:".")
-        description = desc.replacingOccurrences(of:"__", with:"_")
-        description = desc.replacingOccurrences(of:"_period", with:".")
-        
+        description = desc.replacingOccurrences(of:"_u", with:"_")
+        description = desc.replacingOccurrences(of:"_q", with:"\"")
+        description = desc.replacingOccurrences(of:"_sq", with:"\'")
+
         vc.text = description
 
         let key = topics[indexPath.row]
