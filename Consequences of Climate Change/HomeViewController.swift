@@ -11,13 +11,9 @@ import InteractiveSideMenu
 
 class HomeViewController: MenuContainerViewController {
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .default
+        UIApplication.shared.statusBarStyle = .lightContent
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     

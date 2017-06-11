@@ -31,10 +31,11 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     //Cache
     // let imageCache = NSCache<AnyObject, AnyObject>()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
         headerLabel.text = nameLabel
         headerImage.image = UIImage(named: imageNameLabel)
         
@@ -59,6 +60,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.tableView.reloadData()
+        UIApplication.shared.statusBarStyle = .lightContent
  
     }
     
