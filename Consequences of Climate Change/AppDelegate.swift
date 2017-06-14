@@ -49,6 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        URLCache.shared.removeAllCachedResponses()
+    }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

@@ -27,6 +27,8 @@
 		E38B848B1EB0404900F6FC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E38B848A1EB0404900F6FC76 /* Assets.xcassets */; };
 		E38B848E1EB0404900F6FC76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38B848C1EB0404900F6FC76 /* LaunchScreen.storyboard */; };
 		E3BC825D1EB1AC7000CAFDBE /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC825C1EB1AC7000CAFDBE /* NavigationMenuViewController.swift */; };
+		E3ED1B371EF1C46A003D73B7 /* BiographyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ED1B351EF1C46A003D73B7 /* BiographyPageViewController.swift */; };
+		E3ED1B381EF1C46A003D73B7 /* BiographyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3ED1B361EF1C46A003D73B7 /* BiographyPageViewController.xib */; };
 		E3F5A4C91EC2E7B00042B183 /* DetailImages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5A4C71EC2E7B00042B183 /* DetailImages+CoreDataClass.swift */; };
 		E3F5A4CA1EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5A4C81EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		E38B848D1EB0404900F6FC76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E38B848F1EB0404900F6FC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3BC825C1EB1AC7000CAFDBE /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
+		E3ED1B351EF1C46A003D73B7 /* BiographyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BiographyPageViewController.swift; path = BiographyPage/BiographyPageViewController.swift; sourceTree = "<group>"; };
+		E3ED1B361EF1C46A003D73B7 /* BiographyPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BiographyPageViewController.xib; path = BiographyPage/BiographyPageViewController.xib; sourceTree = "<group>"; };
 		E3F5A4C71EC2E7B00042B183 /* DetailImages+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DetailImages+CoreDataClass.swift"; path = "imageData/DetailImages+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E3F5A4C81EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DetailImages+CoreDataProperties.swift"; path = "imageData/DetailImages+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,16 +104,16 @@
 			name = About;
 			sourceTree = "<group>";
 		};
-		E3778BF21EB3E72900C3E5E3 /* HomePage */ = {
+		E3778BF21EB3E72900C3E5E3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				E3778BF31EB3E74600C3E5E3 /* HomePageViewController.swift */,
 				E3778BF41EB3E74600C3E5E3 /* HomePageViewController.xib */,
 			);
-			name = HomePage;
+			name = Home;
 			sourceTree = "<group>";
 		};
-		E3778BF71EB3F84800C3E5E3 /* Category Page */ = {
+		E3778BF71EB3F84800C3E5E3 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				E3778BF81EB3F94000C3E5E3 /* CategoryPageViewController.swift */,
@@ -117,7 +121,7 @@
 				E3778BFC1EB4091500C3E5E3 /* CategoryPageTableViewCell.swift */,
 				E3778BFD1EB4091500C3E5E3 /* CategoryPageTableViewCell.xib */,
 			);
-			name = "Category Page";
+			name = Category;
 			sourceTree = "<group>";
 		};
 		E3778C001EB43C8A00C3E5E3 /* Detail Page */ = {
@@ -154,9 +158,10 @@
 				E38B84841EB0404900F6FC76 /* Main.storyboard */,
 				E32F387B1EB0548800C37B3C /* HomeViewController.swift */,
 				E3BC825C1EB1AC7000CAFDBE /* NavigationMenuViewController.swift */,
-				E3778BF21EB3E72900C3E5E3 /* HomePage */,
-				E3778BF71EB3F84800C3E5E3 /* Category Page */,
+				E3778BF21EB3E72900C3E5E3 /* Home */,
+				E3778BF71EB3F84800C3E5E3 /* Category */,
 				E3778C001EB43C8A00C3E5E3 /* Detail Page */,
+				E3ED1B341EF1C3CF003D73B7 /* Biography */,
 				E349C0DD1EB3D9DB006B6DC4 /* About */,
 				E38B848A1EB0404900F6FC76 /* Assets.xcassets */,
 				E38B848C1EB0404900F6FC76 /* LaunchScreen.storyboard */,
@@ -167,6 +172,15 @@
 				E3F5A4C81EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift */,
 			);
 			path = "Consequences of Climate Change";
+			sourceTree = "<group>";
+		};
+		E3ED1B341EF1C3CF003D73B7 /* Biography */ = {
+			isa = PBXGroup;
+			children = (
+				E3ED1B351EF1C46A003D73B7 /* BiographyPageViewController.swift */,
+				E3ED1B361EF1C46A003D73B7 /* BiographyPageViewController.xib */,
+			);
+			name = Biography;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +256,7 @@
 				E38B84861EB0404900F6FC76 /* Main.storyboard in Resources */,
 				E349C0DC1EB3D9D2006B6DC4 /* AboutPageViewController.xib in Resources */,
 				E3778BFF1EB4091500C3E5E3 /* CategoryPageTableViewCell.xib in Resources */,
+				E3ED1B381EF1C46A003D73B7 /* BiographyPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +326,7 @@
 				E3778C031EB4418500C3E5E3 /* DetailPageViewController.swift in Sources */,
 				E38B84891EB0404900F6FC76 /* Consequences_of_Climate_Change.xcdatamodeld in Sources */,
 				E32F387C1EB0548800C37B3C /* HomeViewController.swift in Sources */,
+				E3ED1B371EF1C46A003D73B7 /* BiographyPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

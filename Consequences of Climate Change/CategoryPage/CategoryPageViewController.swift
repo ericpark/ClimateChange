@@ -5,14 +5,13 @@
 //  Created by Eric Park on 4/28/17.
 //  Copyright © 2017 Eric Park. All rights reserved.
 //
-
 import UIKit
 import CoreData
 import FirebaseDatabase
 import FirebaseStorage
 
 class CategoryPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource   {
-
+    
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -22,11 +21,14 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     var cellIdentifier = "CategoryPageTableViewCell"
     let cellSpacingHeight: CGFloat = 0
     
+    var loadingIndicator: UIActivityIndicatorView!
+    
     //Firebase
     var ref: FIRDatabaseReference!
     var topics: [String] = []
     var images: NSMutableDictionary = [:]
     var topicDict: NSDictionary = [:]
+    
     
     //Cache
     // let imageCache = NSCache<AnyObject, AnyObject>()
@@ -35,7 +37,6 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
         headerLabel.text = nameLabel
         headerImage.image = UIImage(named: imageNameLabel)
         
@@ -45,8 +46,15 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableView.tableFooterView = UIView()
         
+        loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 25, y: UIScreen.main.bounds.height/2 - 25, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+        loadingIndicator.startAnimating();
+        
+        self.view.addSubview(loadingIndicator)
+        
         ref = FIRDatabase.database().reference()
-
+        
         let childRef = FIRDatabase.database().reference(withPath: imageNameLabel)
         childRef.observe(.value, with: { snapshot in
             let a = snapshot.value as! NSDictionary
@@ -59,9 +67,9 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
-        UIApplication.shared.statusBarStyle = .lightContent
- 
+        //self.tableView.reloadData()
+        //UIApplication.shared.statusBarStyle = .lightContent
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -76,20 +84,13 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     func loadImages(){
         self.tableView.isUserInteractionEnabled = false
         let taskGroup = DispatchGroup()
-       // let alert = UIAlertController(title: nil, message: "Making the world a better place...", preferredStyle: .alert)
+        // let alert = UIAlertController(title: nil, message: "Making the world a better place...", preferredStyle: .alert)
         
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 25, y: UIScreen.main.bounds.height/2 - 25, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
-        loadingIndicator.startAnimating();
-        
-        self.view.addSubview(loadingIndicator)
         //self.present(alert, animated: true)
         
         for (key, value) in topicDict{
             let dict = value as! NSDictionary
             let imageName = key as! String
-            
             let keyExists = images[key as Any] != nil
             if !keyExists{
                 //print("Downloading")
@@ -98,9 +99,8 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
                 fullImageName += dict["Filetype"] as! String
                 let imageURL = FIRStorage.storage().reference(forURL: "gs://consequences-of-climate-change.appspot.com").child(fullImageName)
                 taskGroup.enter()
-
+                
                 imageURL.downloadURL(completion: { (url, error) in
-                    
                     if error != nil {
                         //print(error?.localizedDescription as Any)
                         taskGroup.leave()
@@ -127,22 +127,22 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
                             
                             //print("Download Complete")
                             taskGroup.leave()
-
+                            
                         }
                     }).resume()
                     
                 })
-            
+                
                 
             }
             
         }
         taskGroup.notify(queue: DispatchQueue.main){
             
-            loadingIndicator.stopAnimating()
+            self.loadingIndicator.stopAnimating()
             self.tableView.reloadData()
             self.tableView.isUserInteractionEnabled = true
-
+            
             URLCache.shared.removeAllCachedResponses()
             URLCache.shared.diskCapacity = 0
             URLCache.shared.memoryCapacity = 0
@@ -151,7 +151,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBAction func backButton(_ sender: UIButton) {
         let _ = self.navigationController?.popViewController(animated: true)
-
+        
     }
     
     //tableview functions
@@ -188,18 +188,18 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
                 keyRef.observe(.value, with: { snapshot in
                     let a = snapshot.value
                     if a is NSNull{
-
+                        
                         self.pushEmptyViewController(indexPath: indexPath, desc: "Page under construction!")
                     }
                     else{
-
+                        
                         let desc = (a as! NSDictionary)["Description"]
-
+                        
                         
                         self.pushViewController(indexPath: indexPath, desc: desc as! String)
-
+                        
                     }
-
+                    
                 })
             }
             else{
@@ -207,7 +207,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
             }
         })
         tableView.deselectRow(at: indexPath, animated: true)
-
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -219,14 +219,14 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     func pushViewController(indexPath: IndexPath, desc: String){
         let vc = DetailPageViewController(nibName: "DetailPageViewController",bundle: nil)
         vc.detailName = topics[indexPath.row]
-
+        
         var description = desc.replacingOccurrences(of:"_period", with:".")
         description = desc.replacingOccurrences(of:"_u", with:"_")
         description = desc.replacingOccurrences(of:"_q", with:"\"")
         description = desc.replacingOccurrences(of:"_sq", with:"\'")
-
+        
         vc.text = description
-
+        
         let key = topics[indexPath.row]
         let keyExists = (images[key] != nil)
         if keyExists{
@@ -235,15 +235,15 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         else{
             vc.image = UIImage(named: "launch")
         }
-
+        
         navigationController?.pushViewController(vc, animated: true )
     }
-
+    
     func pushEmptyViewController(indexPath: IndexPath, desc: String){
         let vc = DetailPageViewController(
             nibName: "DetailPageViewController",
             bundle: nil)
-
+        
         vc.detailName = topics[indexPath.row]
         vc.text = desc
         
@@ -255,10 +255,10 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         else{
             vc.image = UIImage(named: "launch")
         }
-
+        
         navigationController?.pushViewController(vc,animated: true )
     }
-
+    
     func save(name: String, image: UIImage, type: String, dateModified: NSDate)
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -272,14 +272,14 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         }
         else{
             imageData = NSData(data: UIImagePNGRepresentation(image)!)
-
+            
         }
         
         detailImage.setValue(name, forKeyPath: "name")
         detailImage.setValue(imageData, forKeyPath: "image")
         detailImage.setValue(dateModified, forKeyPath: "dateModified")
         detailImage.setValue(type_lower, forKeyPath:"filetype")
-
+        
         do {
             try managedContext.save()
         } catch _ as NSError {
@@ -289,15 +289,12 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
-
-

@@ -47,6 +47,7 @@ class HomeViewController: MenuContainerViewController {
         var contentList = [MenuItemContentViewController]()
         
         contentList.append( HomePageViewController(nibName: "HomePageViewController", bundle: nil) as MenuItemContentViewController)
+        contentList.append( BiographyPageViewController(nibName: "BiographyPageViewController", bundle: nil) as MenuItemContentViewController)
         contentList.append( AboutPageViewController(nibName: "AboutPageViewController", bundle: nil) as MenuItemContentViewController)
 
         return contentList
