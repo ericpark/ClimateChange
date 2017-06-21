@@ -60,6 +60,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
             let a = snapshot.value as! NSDictionary
             self.topicDict = a
             self.topics = Array(self.topicDict.allKeys) as! [String]
+            //Fetch using Core data
             self.images = self.fetch(names: self.topics)
             self.loadImages()
         })
@@ -70,6 +71,11 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         //self.tableView.reloadData()
         //UIApplication.shared.statusBarStyle = .lightContent
         
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.images = [:]
+        self.ref = nil
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -259,6 +265,89 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         navigationController?.pushViewController(vc,animated: true )
     }
     
+    func save(name: String, image: UIImage, type: String, dateModified: NSDate){
+        let fileManager = FileManager.default
+        //print(name)
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(name)
+        //print(paths)
+        let imageData = UIImageJPEGRepresentation(image, 0.5)
+        fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+    }
+    
+    func getDirectoryPath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    
+    func fetch(names: [String]) -> NSMutableDictionary{
+        let fileManager = FileManager.default
+        var imagePath = ""
+        let images: NSMutableDictionary = [:]
+        for name in names{
+            //print("fetching " + name)
+            imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(name)
+            if fileManager.fileExists(atPath: imagePath){
+                images[name] = UIImage(contentsOfFile: imagePath)
+                //print("Success! " + name)
+            }else{
+                print("No Image")
+            }
+
+        }
+
+        return images
+
+    }
+    
+    
+    /* Core Data Fetch
+    //Problem: Fetching Core data = Lots of memory = Crash = :(
+ 
+    func fetch(names: [String]) -> NSMutableDictionary{
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return [:]
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "DetailImages")
+        
+        let images: NSMutableDictionary = [:]
+        
+        for name in names{
+            autoreleasepool{
+                do {
+                    //fetch names
+                    fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+                    let results = try managedContext.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [DetailImages]
+                    if results.count != 0{
+                        //let darkenedImage = UIImage(data: results[0].image! as Data)?.image(alpha: 0.7)
+                        images[results[0].name! as String] = UIImage(data: results[0].image! as Data)?.image(alpha: 0.7)
+                        
+                    }
+                    managedContext.reset()
+                    
+                    
+                } catch let error as NSError {
+                    print("Could not fetch. \(error), \(error.userInfo)")
+                }
+            }
+        }
+        
+        return images
+    }
+    
+    */
+
+    
+    /* Core Data Save
+     //Problem: Saving to core data caused memory spikes to crash the program
     func save(name: String, image: UIImage, type: String, dateModified: NSDate)
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -285,8 +374,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         } catch _ as NSError {
             //print("Could not save. \(error), \(error.userInfo)")
         }
-    }
-    
+    }*/
     
     /*
      // MARK: - Navigation

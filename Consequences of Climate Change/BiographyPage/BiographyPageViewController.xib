@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,12 +25,14 @@
                     <rect key="frame" x="27" y="123" width="150" height="189.5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPlogo" translatesAutoresizingMaskIntoConstraints="NO" id="j5T-OQ-tU9">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPlogo" translatesAutoresizingMaskIntoConstraints="NO" id="j5T-OQ-tU9">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQZ-Pk-hww">
                             <rect key="frame" x="0.0" y="150" width="150" height="39.5"/>
-                            <string key="text">Lucas StegmanLucas.Stegman@tufts.edu</string>
+                            <string key="text">Lucas Stegman
+Lucas.Stegman@tufts.edu
+</string>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -40,12 +43,14 @@
                     <rect key="frame" x="198" y="123" width="150" height="189.5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPlogo" translatesAutoresizingMaskIntoConstraints="NO" id="4dt-ka-80P">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPlogo" translatesAutoresizingMaskIntoConstraints="NO" id="4dt-ka-80P">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="US3-D0-0mP">
                             <rect key="frame" x="0.0" y="150" width="150" height="39.5"/>
-                            <string key="text">Alex PiacentiniAlex.Piancentini@tufts.edu</string>
+                            <string key="text">Alex Piacentini
+Alex.Piancentini@tufts.edu
+</string>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -60,20 +65,37 @@ We do not own any of the information or images contained in this application. An
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="928-BC-HMt">
+                    <rect key="frame" x="5" y="5" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="3DP-ud-IYp"/>
+                        <constraint firstAttribute="width" constant="44" id="UdS-g6-rrp"/>
+                        <constraint firstAttribute="width" secondItem="928-BC-HMt" secondAttribute="height" multiplier="1:1" id="W6S-VC-t3f"/>
+                    </constraints>
+                    <state key="normal" image="BlackMenu"/>
+                    <connections>
+                        <action selector="didOpenMenu:" destination="-1" eventType="touchUpInside" id="EQr-6q-W2g"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="j5T-OQ-tU9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="27" id="3er-G9-UUL"/>
                 <constraint firstItem="j5T-OQ-tU9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="123" id="97x-yg-nxf"/>
                 <constraint firstItem="kZi-cd-XvP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BOO-Ts-jyt"/>
+                <constraint firstItem="928-BC-HMt" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="44/667" id="BX5-OR-Fhj"/>
                 <constraint firstItem="4dt-ka-80P" firstAttribute="leading" secondItem="j5T-OQ-tU9" secondAttribute="trailing" constant="21" id="ByL-IE-9l6"/>
+                <constraint firstItem="928-BC-HMt" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="44/375" id="Mye-aZ-XMk"/>
+                <constraint firstItem="928-BC-HMt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="NTX-QK-arm"/>
                 <constraint firstAttribute="bottom" secondItem="kZi-cd-XvP" secondAttribute="bottom" constant="66" id="U7l-o3-35Q"/>
                 <constraint firstItem="j5T-OQ-tU9" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="150/667" id="VTT-al-CBv"/>
+                <constraint firstItem="928-BC-HMt" firstAttribute="width" secondItem="928-BC-HMt" secondAttribute="height" multiplier="1:1" id="XeH-9N-pA3"/>
                 <constraint firstItem="4dt-ka-80P" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="123" id="a7q-se-xKG"/>
                 <constraint firstItem="kZi-cd-XvP" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="321/375" id="g55-Vi-qht"/>
                 <constraint firstItem="kZi-cd-XvP" firstAttribute="top" secondItem="4dt-ka-80P" secondAttribute="bottom" constant="47" id="gdu-xt-Wo7"/>
                 <constraint firstAttribute="trailing" secondItem="4dt-ka-80P" secondAttribute="trailing" constant="27" id="ib5-f1-qLI"/>
                 <constraint firstItem="kZi-cd-XvP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="281/667" id="nXe-6Q-P8B"/>
+                <constraint firstItem="928-BC-HMt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="o2T-Cp-aPf"/>
                 <constraint firstItem="j5T-OQ-tU9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="150/375" id="qFO-tU-Zob"/>
                 <constraint firstItem="kZi-cd-XvP" firstAttribute="top" secondItem="j5T-OQ-tU9" secondAttribute="bottom" constant="47" id="xZ9-Zu-2jT"/>
                 <constraint firstItem="4dt-ka-80P" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="150/667" id="zWI-lm-iOX"/>
@@ -83,6 +105,7 @@ We do not own any of the information or images contained in this application. An
         </view>
     </objects>
     <resources>
+        <image name="BlackMenu" width="24" height="17"/>
         <image name="EPlogo" width="4130" height="6624"/>
     </resources>
 </document>
