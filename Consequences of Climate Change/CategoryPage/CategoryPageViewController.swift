@@ -26,8 +26,8 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     //Firebase
     var ref: FIRDatabaseReference!
     var topics: [String] = []
-    var images: NSMutableDictionary = [:]
-    var topicDict: NSDictionary = [:]
+    lazy var images: NSMutableDictionary? = [:]
+    lazy var topicDict: NSDictionary = [:]
     
     
     //Cache
@@ -60,8 +60,8 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
             let a = snapshot.value as! NSDictionary
             self.topicDict = a
             self.topics = Array(self.topicDict.allKeys) as! [String]
-            //Fetch using Core data
-            self.images = self.fetch(names: self.topics)
+            //Fetch using Document
+            self.fetch(names: self.topics)
             self.loadImages()
         })
     }
@@ -97,7 +97,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         for (key, value) in topicDict{
             let dict = value as! NSDictionary
             let imageName = key as! String
-            let keyExists = images[key as Any] != nil
+            let keyExists = images?[key as Any] != nil
             if !keyExists{
                 //print("Downloading")
                 var fullImageName = dict["Image"] as! String
@@ -127,7 +127,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
                             let key = imageName
                             let newImage = imageData as UIImage
                             let darkenedImage = newImage.image(alpha: 0.7)
-                            self.images[key] = darkenedImage
+                            self.images?[key] = darkenedImage
                             
                             self.save(name: imageName, image: newImage, type:dict["Filetype"] as! String, dateModified: NSDate())
                             
@@ -178,8 +178,8 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! CategoryPageTableViewCell
         cell.titleLabel.text = topics[indexPath.row]
         let key = topics[indexPath.row]
-        if self.images[key] != nil {
-            cell.cellImageView!.image = self.images[key]! as? UIImage
+        if self.images?[key] != nil {
+            cell.cellImageView!.image = self.images?[key]! as? UIImage
         }
         return cell
     }
@@ -234,9 +234,9 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         vc.text = description
         
         let key = topics[indexPath.row]
-        let keyExists = (images[key] != nil)
+        let keyExists = (images?[key] != nil)
         if keyExists{
-            vc.image = images[key]! as? UIImage
+            vc.image = images?[key]! as? UIImage
         }
         else{
             vc.image = UIImage(named: "launch")
@@ -254,9 +254,9 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         vc.text = desc
         
         let key = topics[indexPath.row] as String
-        let keyExists = (images[key] != nil)
+        let keyExists = (images?[key] != nil)
         if keyExists{
-            vc.image = images[key]! as? UIImage
+            vc.image = images?[key]! as? UIImage
         }
         else{
             vc.image = UIImage(named: "launch")
@@ -281,24 +281,21 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-    func fetch(names: [String]) -> NSMutableDictionary{
+    func fetch(names: [String]){
         let fileManager = FileManager.default
         var imagePath = ""
-        let images: NSMutableDictionary = [:]
         for name in names{
             //print("fetching " + name)
             imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(name)
             if fileManager.fileExists(atPath: imagePath){
-                images[name] = UIImage(contentsOfFile: imagePath)
-                //print("Success! " + name)
+                self.images?[name] = UIImage(contentsOfFile: imagePath)
+                //print("Success " + name)
+
             }else{
-                print("No Image")
+                //print("No Image")
             }
 
         }
-
-        return images
-
     }
     
     
