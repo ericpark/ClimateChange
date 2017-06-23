@@ -73,10 +73,11 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
+    /*
     override func viewDidDisappear(_ animated: Bool) {
         self.images = [:]
         self.ref = nil
-    }
+    }*/
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
