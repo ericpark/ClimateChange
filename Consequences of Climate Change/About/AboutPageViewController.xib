@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,16 +65,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate Venmo: @EricSPark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyP-8R-9Ls">
-                    <rect key="frame" x="0.0" y="468" width="375" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="QyP-8R-9Ls" secondAttribute="height" multiplier="125:7" id="Sje-Q5-UdI"/>
-                        <constraint firstAttribute="height" constant="21" id="Tey-YJ-Ada"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content Created by Lucas Stegman and Alex Piacentini" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKb-rO-o1A">
                     <rect key="frame" x="0.0" y="508" width="375" height="21"/>
                     <constraints>
@@ -108,7 +98,6 @@
             </subviews>
             <constraints>
                 <constraint firstItem="Eic-6Z-mrw" firstAttribute="width" secondItem="Eic-6Z-mrw" secondAttribute="height" multiplier="125:7" id="2R0-lJ-eue"/>
-                <constraint firstItem="QyP-8R-9Ls" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Ed-c8-SMO"/>
                 <constraint firstItem="Sf8-je-i9R" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4nk-rg-3HG"/>
                 <constraint firstItem="MU0-64-Ms1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5Qq-YB-Pxd"/>
                 <constraint firstItem="Eic-6Z-mrw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5VQ-rn-vmP"/>
@@ -116,7 +105,6 @@
                 <constraint firstItem="Tuu-F9-DtP" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="7Uq-7W-5qY"/>
                 <constraint firstItem="Sf8-je-i9R" firstAttribute="width" secondItem="Sf8-je-i9R" secondAttribute="height" multiplier="125:7" id="8bp-Tf-Ekp"/>
                 <constraint firstItem="fkP-xw-fGG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9fE-8E-WmM"/>
-                <constraint firstItem="QyP-8R-9Ls" firstAttribute="top" secondItem="MU0-64-Ms1" secondAttribute="bottom" constant="-1" id="Ajx-Yf-tBg"/>
                 <constraint firstItem="Eic-6Z-mrw" firstAttribute="top" secondItem="Sf8-je-i9R" secondAttribute="bottom" constant="-1" id="AyH-v5-7Qi"/>
                 <constraint firstItem="Sf8-je-i9R" firstAttribute="width" secondItem="Sf8-je-i9R" secondAttribute="height" multiplier="125:7" id="FPX-HD-jII"/>
                 <constraint firstItem="MU0-64-Ms1" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Fl7-4H-XAO"/>
@@ -130,20 +118,17 @@
                 <constraint firstItem="x0G-wP-2kQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Igp-S4-SZB"/>
                 <constraint firstItem="Eic-6Z-mrw" firstAttribute="width" secondItem="Eic-6Z-mrw" secondAttribute="height" multiplier="125:7" id="OlU-No-hfM"/>
                 <constraint firstItem="Sf8-je-i9R" firstAttribute="width" secondItem="Sf8-je-i9R" secondAttribute="height" multiplier="125:7" id="QaV-z0-5CN"/>
+                <constraint firstItem="Sf8-je-i9R" firstAttribute="top" secondItem="MU0-64-Ms1" secondAttribute="bottom" constant="59" id="RcS-44-JjF"/>
                 <constraint firstItem="fkP-xw-fGG" firstAttribute="top" secondItem="Tuu-F9-DtP" secondAttribute="bottom" constant="-1" id="SlP-KE-D55"/>
                 <constraint firstItem="JKb-rO-o1A" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Va7-Oc-9lu"/>
                 <constraint firstItem="Eic-6Z-mrw" firstAttribute="width" secondItem="Eic-6Z-mrw" secondAttribute="height" multiplier="125:7" id="ZlA-q2-4qy"/>
                 <constraint firstItem="JKb-rO-o1A" firstAttribute="width" secondItem="JKb-rO-o1A" secondAttribute="height" multiplier="125:7" id="aNa-cX-wpA"/>
                 <constraint firstItem="MU0-64-Ms1" firstAttribute="width" secondItem="MU0-64-Ms1" secondAttribute="height" multiplier="125:7" id="b0a-1P-qei"/>
                 <constraint firstItem="JKb-rO-o1A" firstAttribute="width" secondItem="JKb-rO-o1A" secondAttribute="height" multiplier="125:7" id="cCT-3Y-sVN"/>
-                <constraint firstItem="QyP-8R-9Ls" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="cLZ-VI-cdP"/>
                 <constraint firstItem="MU0-64-Ms1" firstAttribute="top" secondItem="fkP-xw-fGG" secondAttribute="bottom" constant="-1" id="d5u-ee-s9X"/>
-                <constraint firstItem="QyP-8R-9Ls" firstAttribute="width" secondItem="QyP-8R-9Ls" secondAttribute="height" multiplier="125:7" id="dhF-6a-QbQ"/>
                 <constraint firstItem="Tuu-F9-DtP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eTJ-mI-k6y"/>
                 <constraint firstItem="JKb-rO-o1A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ejl-fj-XgR"/>
-                <constraint firstItem="JKb-rO-o1A" firstAttribute="top" secondItem="QyP-8R-9Ls" secondAttribute="bottom" constant="19" id="icg-Oj-Gjb"/>
                 <constraint firstItem="x0G-wP-2kQ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.2" id="iiZ-YK-Yoe"/>
-                <constraint firstItem="QyP-8R-9Ls" firstAttribute="width" secondItem="QyP-8R-9Ls" secondAttribute="height" multiplier="125:7" id="kj4-qv-e3z"/>
                 <constraint firstItem="Eic-6Z-mrw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="qYQ-93-rx7"/>
                 <constraint firstItem="Eic-6Z-mrw" firstAttribute="width" secondItem="Eic-6Z-mrw" secondAttribute="height" multiplier="125:7" id="rdl-6T-ljk"/>
                 <constraint firstItem="Sf8-je-i9R" firstAttribute="top" secondItem="JKb-rO-o1A" secondAttribute="bottom" constant="-1" id="t7I-ie-Ot3"/>

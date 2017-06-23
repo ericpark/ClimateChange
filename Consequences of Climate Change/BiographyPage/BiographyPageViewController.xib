@@ -25,7 +25,7 @@
                     <rect key="frame" x="27" y="123" width="150" height="189.5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPlogo" translatesAutoresizingMaskIntoConstraints="NO" id="j5T-OQ-tU9">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lucas" translatesAutoresizingMaskIntoConstraints="NO" id="j5T-OQ-tU9">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQZ-Pk-hww">
@@ -43,7 +43,7 @@ Lucas.Stegman@tufts.edu
                     <rect key="frame" x="198" y="123" width="150" height="189.5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EPlogo" translatesAutoresizingMaskIntoConstraints="NO" id="4dt-ka-80P">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alex" translatesAutoresizingMaskIntoConstraints="NO" id="4dt-ka-80P">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="US3-D0-0mP">
@@ -105,7 +105,8 @@ We do not own any of the information or images contained in this application. An
         </view>
     </objects>
     <resources>
+        <image name="Alex" width="512" height="512"/>
         <image name="BlackMenu" width="24" height="17"/>
-        <image name="EPlogo" width="4130" height="6624"/>
+        <image name="Lucas" width="1152" height="1152"/>
     </resources>
 </document>

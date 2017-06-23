@@ -31,7 +31,7 @@ class NavigationMenuViewController: MenuViewController {
     
     let kItemsCount = 3
     let kCellReuseIdentifier = "UITableViewCell"
-    let menu = ["Home", "Authors", "Donate"]
+    let menu = ["Home", "Authors", "Contact"]
     
     @IBOutlet weak var tableView: UITableView!
     
