@@ -36,7 +36,7 @@ class HomePageViewController: MenuItemContentViewController {
         showMenu()
     }
 
-    //TODO: This should all be done in prepare. 
+    //TODO: This could all be done in prepare. 
     @IBAction func healthMenu(_ sender: UIButton) {
         if !buttonPushed{
             buttonPushed = true
@@ -127,13 +127,3 @@ extension UIViewController{
     
 }
 
-extension UIImage {
-    //Increase Alpha to make it transparent. This will be used to darken image over black bg
-    func image(alpha: CGFloat) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        draw(at: CGPoint.zero, blendMode: .normal, alpha: alpha)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
-    }
-}

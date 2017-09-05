@@ -10,7 +10,7 @@ import CoreData
 import FirebaseDatabase
 import FirebaseStorage
 
-class CategoryPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource   {
+class CategoryPageViewController: UIViewController   {
     
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var headerLabel: UILabel!
@@ -65,20 +65,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
             self.loadImages()
         })
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //self.tableView.reloadData()
-        //UIApplication.shared.statusBarStyle = .lightContent
-        
-    }
-    
-    /*
-    override func viewDidDisappear(_ animated: Bool) {
-        self.images = [:]
-        self.ref = nil
-    }*/
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -89,16 +76,16 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func loadImages(){
+        //Don't let user tap while downloading
         self.tableView.isUserInteractionEnabled = false
         let taskGroup = DispatchGroup()
-        // let alert = UIAlertController(title: nil, message: "Making the world a better place...", preferredStyle: .alert)
-        
-        //self.present(alert, animated: true)
+    
         
         for (key, value) in topicDict{
             let dict = value as! NSDictionary
             let imageName = key as! String
             let keyExists = images?[key as Any] != nil
+            //If can not be found, then it must be downloaded
             if !keyExists{
                 //print("Downloading")
                 var fullImageName = dict["Image"] as! String
@@ -145,7 +132,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
             
         }
         taskGroup.notify(queue: DispatchQueue.main){
-            
+            //After downloads are complete, show images
             self.loadingIndicator.stopAnimating()
             self.tableView.reloadData()
             self.tableView.isUserInteractionEnabled = true
@@ -159,68 +146,6 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     @IBAction func backButton(_ sender: UIButton) {
         let _ = self.navigationController?.popViewController(animated: true)
         
-    }
-    
-    //tableview functions
-    func numberOfSections(in tableView: UITableView) -> Int{
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRows = topics.count
-        return numberOfRows
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! CategoryPageTableViewCell
-        cell.titleLabel.text = topics[indexPath.row]
-        let key = topics[indexPath.row]
-        if self.images?[key] != nil {
-            cell.cellImageView!.image = self.images?[key]! as? UIImage
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let key = topics[indexPath.row]
-        //ref = FIRDatabase.database().reference(withPath: key!)
-        ref = FIRDatabase.database().reference()
-        ref.observe(.value, with: { snapshot in
-            if snapshot.hasChild(key){
-                let keyRef = FIRDatabase.database().reference(withPath: key)
-                keyRef.observe(.value, with: { snapshot in
-                    let a = snapshot.value
-                    if a is NSNull{
-                        
-                        self.pushEmptyViewController(indexPath: indexPath, desc: "Page under construction!")
-                    }
-                    else{
-                        
-                        let desc = (a as! NSDictionary)["Description"]
-                        
-                        
-                        self.pushViewController(indexPath: indexPath, desc: desc as! String)
-                        
-                    }
-                    
-                })
-            }
-            else{
-                self.pushEmptyViewController(indexPath: indexPath, desc: "Page under construction!")
-            }
-        })
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height:CGFloat = CGFloat()
-        height = UIScreen.main.bounds.size.height/9
-        return height
     }
     
     func pushViewController(indexPath: IndexPath, desc: String){
@@ -245,7 +170,8 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
         
         navigationController?.pushViewController(vc, animated: true )
     }
-    
+
+    //Test method. This should no longer be called after all the pages are updated on firebase.
     func pushEmptyViewController(indexPath: IndexPath, desc: String){
         let vc = DetailPageViewController(
             nibName: "DetailPageViewController",
@@ -283,6 +209,7 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func fetch(names: [String]){
+        //Fetch using FileManager
         let fileManager = FileManager.default
         var imagePath = ""
         for name in names{
@@ -298,89 +225,72 @@ class CategoryPageViewController: UIViewController, UITableViewDelegate, UITable
 
         }
     }
-    
-    
-    /* Core Data Fetch
-    //Problem: Fetching Core data = Lots of memory = Crash = :(
- 
-    func fetch(names: [String]) -> NSMutableDictionary{
-        
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return [:]
-        }
-        
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "DetailImages")
-        
-        let images: NSMutableDictionary = [:]
-        
-        for name in names{
-            autoreleasepool{
-                do {
-                    //fetch names
-                    fetchRequest.predicate = NSPredicate(format: "name == %@", name)
-                    let results = try managedContext.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [DetailImages]
-                    if results.count != 0{
-                        //let darkenedImage = UIImage(data: results[0].image! as Data)?.image(alpha: 0.7)
-                        images[results[0].name! as String] = UIImage(data: results[0].image! as Data)?.image(alpha: 0.7)
-                        
-                    }
-                    managedContext.reset()
-                    
-                    
-                } catch let error as NSError {
-                    print("Could not fetch. \(error), \(error.userInfo)")
-                }
-            }
-        }
-        
-        return images
+}
+
+extension CategoryPageViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height:CGFloat = CGFloat()
+        height = UIScreen.main.bounds.size.height/9
+        return height
     }
     
-    */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let key = topics[indexPath.row]
+        //ref = FIRDatabase.database().reference(withPath: key!)
+        ref = FIRDatabase.database().reference()
+        ref.observe(.value, with: { snapshot in
+            if snapshot.hasChild(key){
+                let keyRef = FIRDatabase.database().reference(withPath: key)
+                keyRef.observe(.value, with: { snapshot in
+                    let a = snapshot.value
+                    if a is NSNull{
+                        
+                        self.pushEmptyViewController(indexPath: indexPath, desc: "Page under construction!")
+                    }
+                    else{
+                        
+                        let desc = (a as! NSDictionary)["Description"]
+                        
+                        
+                        self.pushViewController(indexPath: indexPath, desc: desc as! String)
+                        
+                    }
+                    
+                })
+            }
+            else{
+                self.pushEmptyViewController(indexPath: indexPath, desc: "Page under construction!")
+            }
+        })
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+}
 
+extension CategoryPageViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int{
+        return 1
+    }
     
-    /* Core Data Save
-     //Problem: Saving to core data caused memory spikes to crash the program
-    func save(name: String, image: UIImage, type: String, dateModified: NSDate)
-    {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "DetailImages", in: managedContext)!
-        let detailImage = NSManagedObject(entity: entity, insertInto: managedContext)
-        var imageData: NSData
-        let type_lower = type.lowercased()
-        if type_lower == "jpg" || type_lower == "jpeg"{
-            imageData = NSData(data: UIImageJPEGRepresentation(image, 0.0)!)
-        }
-        else{
-            imageData = NSData(data: UIImagePNGRepresentation(image)!)
-            
-        }
-        
-        detailImage.setValue(name, forKeyPath: "name")
-        detailImage.setValue(imageData, forKeyPath: "image")
-        detailImage.setValue(dateModified, forKeyPath: "dateModified")
-        detailImage.setValue(type_lower, forKeyPath:"filetype")
-        
-        do {
-            try managedContext.save()
-        } catch _ as NSError {
-            //print("Could not save. \(error), \(error.userInfo)")
-        }
-    }*/
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfRows = topics.count
+        return numberOfRows
+    }
     
-    /*
-     // MARK: - Navigation
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! CategoryPageTableViewCell
+        cell.titleLabel.text = topics[indexPath.row]
+        let key = topics[indexPath.row]
+        if self.images?[key] != nil {
+            cell.cellImageView!.image = self.images?[key]! as? UIImage
+        }
+        return cell
+    }
+    
+
 }

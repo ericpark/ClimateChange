@@ -12,6 +12,7 @@
 		E32F387C1EB0548800C37B3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F387B1EB0548800C37B3C /* HomeViewController.swift */; };
 		E349C0DB1EB3D9D2006B6DC4 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C0D91EB3D9D2006B6DC4 /* AboutPageViewController.swift */; };
 		E349C0DC1EB3D9D2006B6DC4 /* AboutPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E349C0DA1EB3D9D2006B6DC4 /* AboutPageViewController.xib */; };
+		E364AA8A1F5F009200A70432 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E364AA891F5F009200A70432 /* UIImage+Extension.swift */; };
 		E3778BF51EB3E74600C3E5E3 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3778BF31EB3E74600C3E5E3 /* HomePageViewController.swift */; };
 		E3778BF61EB3E74600C3E5E3 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3778BF41EB3E74600C3E5E3 /* HomePageViewController.xib */; };
 		E3778BFA1EB3F94000C3E5E3 /* CategoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3778BF81EB3F94000C3E5E3 /* CategoryPageViewController.swift */; };
@@ -41,6 +42,7 @@
 		E32F387B1EB0548800C37B3C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E349C0D91EB3D9D2006B6DC4 /* AboutPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutPageViewController.swift; path = About/AboutPageViewController.swift; sourceTree = "<group>"; };
 		E349C0DA1EB3D9D2006B6DC4 /* AboutPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutPageViewController.xib; path = About/AboutPageViewController.xib; sourceTree = "<group>"; };
+		E364AA891F5F009200A70432 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extension.swift"; path = "Helpers/UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E3778BF31EB3E74600C3E5E3 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageViewController.swift; path = HomePage/HomePageViewController.swift; sourceTree = "<group>"; };
 		E3778BF41EB3E74600C3E5E3 /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePageViewController.xib; path = HomePage/HomePageViewController.xib; sourceTree = "<group>"; };
 		E3778BF81EB3F94000C3E5E3 /* CategoryPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryPageViewController.swift; path = CategoryPage/CategoryPageViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 			name = About;
 			sourceTree = "<group>";
 		};
+		E364AA861F5EFFFF00A70432 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E364AA891F5F009200A70432 /* UIImage+Extension.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		E3778BF21EB3E72900C3E5E3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +173,7 @@
 				E3778C001EB43C8A00C3E5E3 /* Detail Page */,
 				E3ED1B341EF1C3CF003D73B7 /* Biography */,
 				E349C0DD1EB3D9DB006B6DC4 /* About */,
+				E364AA861F5EFFFF00A70432 /* Helpers */,
 				E38B848A1EB0404900F6FC76 /* Assets.xcassets */,
 				E38B848C1EB0404900F6FC76 /* LaunchScreen.storyboard */,
 				E38B848F1EB0404900F6FC76 /* Info.plist */,
@@ -315,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E364AA8A1F5F009200A70432 /* UIImage+Extension.swift in Sources */,
 				E3F5A4C91EC2E7B00042B183 /* DetailImages+CoreDataClass.swift in Sources */,
 				E3778BFE1EB4091500C3E5E3 /* CategoryPageTableViewCell.swift in Sources */,
 				E3F5A4CA1EC2E7B00042B183 /* DetailImages+CoreDataProperties.swift in Sources */,

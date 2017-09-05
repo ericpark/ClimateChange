@@ -36,6 +36,7 @@ class HomeViewController: MenuContainerViewController {
         
     }
     
+    //Side Menu Functions
     override func menuTransitionOptionsBuilder() -> TransitionOptionsBuilder? {
         return TransitionOptionsBuilder() { builder in
             builder.duration = 0.5
@@ -53,4 +54,5 @@ class HomeViewController: MenuContainerViewController {
         return contentList
     }
 }
+
 
